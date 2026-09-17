@@ -211,13 +211,6 @@ em {
     place-items: center
 }
 
-.hero-visual:after {
-    content: '';
-    position: absolute;
-    inset: 18px;
-    border: 1px solid rgba(255, 255, 255, .5)
-}
-
 .hero-image {
   position: relative;
   z-index: 2;
@@ -225,6 +218,7 @@ em {
   width: min(82%, 520px);
   height: auto;
   object-fit: contain;
+  top: 20px;
 }
 
 .air-unit {
@@ -262,9 +256,9 @@ em {
 
 .visual-label {
     position: absolute;
-    top: 45px;
-    left: 55px;
-    color: #e84430;
+    top: 15px;
+    left: 40px;
+    color: #fffefe;
     font-size: 12px;
     letter-spacing: 2px;
     z-index: 2
@@ -272,6 +266,7 @@ em {
 
 .visual-label b {
     font-size: 18px
+    
 }
 
 .visual-orb {
@@ -292,16 +287,6 @@ em {
     height: 180px;
     left: -60px;
     bottom: -60px
-}
-
-.vertical-note {
-    position: absolute;
-    right: 25px;
-    bottom: 40px;
-    writing-mode: vertical-rl;
-    font-size: 8px;
-    letter-spacing: 2px;
-    color: #fff
 }
 
 .trust-strip {
@@ -412,7 +397,7 @@ em {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 400px;
+  min-height: 200px;
   background: #000000;
 }
 .about-shape {
@@ -547,6 +532,89 @@ em {
     height: auto;
     aspect-ratio: 16 / 10;
     object-fit: cover;
+  }
+}
+@media (max-width: 900px) {
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(75%, 300px);
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    background: #111;
+    padding: 40px;
+    transform: translateX(100%);
+    transition: transform .3s ease;
+    z-index: 100;
+  }
+
+  .main-nav.is-open {
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: block;
+    position: relative;
+    z-index: 101;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 40px 5% 60px;
+    gap: 30px;
+  }
+
+  .hero-visual {
+    min-height: 380px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: 0;
+  }
+
+  .about-section,
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+
+  .about-copy {
+    padding: 50px 5%;
+    max-width: none;
+  }
+
+  .contact-section {
+    gap: 40px;
+    padding: 70px 5%;
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .section-intro {
+    max-width: none;
+  }
+
+  .trust-strip {
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
